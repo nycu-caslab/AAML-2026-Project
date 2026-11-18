@@ -5,7 +5,7 @@
 In this final project, you are required to design a NPU to accelerate the BERT-Medium model for natural language processing (NLP) sequence classification tasks. The primary goal is to minimize inference latency—targeting well under the software-only execution time—while maintaining the model's accuracy.
 
 ### Selected Model
-We use an INT8 quantized version of the BERT-Medium architecture. The default implementation provided in the template is configured with a fixed sequence length of 125 to optimize the matrix dimensions for hardware acceleration while preserving sequence classification performance. BERT is an encoder-based model used to classify sequences into positive or negative.
+We use an INT8 quantized version of the BERT-Medium architecture. The default implementation provided in the template is configured with a fixed sequence length of 125 to optimize the matrix dimensions for hardware acceleration while preserving sequence classification performance. BERT is an encoder-based model used to classify sequences into positive or negative. We also introduced specialized modifications to BERT to support INT8-based QKV computations.
 
 You don’t need to integrate the model yourself; the bare-metal C headers are already included in the CFU template. You can inspect the .tflite model architecture using [Netron](https://netron.app/).
 
